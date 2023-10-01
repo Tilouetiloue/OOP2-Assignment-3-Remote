@@ -4,6 +4,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 
+import java.util.Comparator;
+
 public class DeckController {
     @FXML
     private TextArea aDeckTextArea;
@@ -18,6 +20,8 @@ public class DeckController {
 
     private final Hand aHand = new Hand();
 
+    private final Comparator<Card> sortingStrategy = new FirstRankComparator();
+
     public void initialize() {
         this.displayCardCollections();
     }
@@ -28,9 +32,11 @@ public class DeckController {
         this.displayCardCollections();
     }
 
+    // Feature1
     @FXML
     protected void onSortButtonClick() {
-        aDeckTextArea.setText("This does not sort anything yet.");
+        aDeck.sort(sortingStrategy);
+        this.displayCardCollections();
     }
 
     @FXML
@@ -50,4 +56,5 @@ public class DeckController {
         this.aDeckTextArea.setText(this.aDeck.toString());
         this.aHandTextArea.setText(this.aHand.toString());
     }
+
 }
