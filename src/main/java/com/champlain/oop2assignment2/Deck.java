@@ -36,4 +36,9 @@ public class Deck extends CardCollection implements CardSource {
     public void sort(Comparator<Card> sortingStrategy) {
         aCards.sort(sortingStrategy);
     }
+
+    // Feature2
+    public void sortSuit(Comparator<Card> sortingStrategy) {
+        aCards.sort(sortingStrategy);
+    }
 }
