@@ -20,7 +20,9 @@ public class DeckController {
 
     private final Hand aHand = new Hand();
 
-    private final Comparator<Card> sortingStrategy = new FirstRankComparator();
+    private Comparator<Card> sortingStrategy = new FirstRankComparator();
+
+    private Comparator<Card>  suitSortingStrategy = new SuitFirstComparator();
 
     public void initialize() {
         this.displayCardCollections();
@@ -38,6 +40,14 @@ public class DeckController {
         aDeck.sort(sortingStrategy);
         this.displayCardCollections();
     }
+
+    // Feature2
+    @FXML
+    protected void onSortBySuitButtonClick() {
+        aDeck.sortSuit(suitSortingStrategy);
+        this.displayCardCollections();
+    }
+
 
     @FXML
     protected void onScoreButtonClick() {
