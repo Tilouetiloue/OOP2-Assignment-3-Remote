@@ -29,6 +29,8 @@ public class DeckController {
 
     private SimpleCountStrategy simpleCount = new SimpleCountStrategy();
 
+    private NumberOfAcesStrategy aceCount = new NumberOfAcesStrategy();
+
     public void initialize() {
         this.displayCardCollections();
     }
@@ -66,7 +68,13 @@ public class DeckController {
     }
     @FXML
     protected void onAceButtonClick() {
-        
+        List<Card> pHand = new ArrayList<>();
+        int score;
+        for (Card card : aHand) {
+            pHand.add(card);
+        }
+        score = aceCount.calculateScore(pHand);
+        displayScore(score);
     }
 
     @FXML
