@@ -62,6 +62,7 @@ public class DeckController {
             pHand.add(card);
         }
         score = simpleCount.calculateScore(pHand);
+        displayScore(score);
     }
 
     @FXML
@@ -76,5 +77,7 @@ public class DeckController {
         this.aDeckTextArea.setText(this.aDeck.toString());
         this.aHandTextArea.setText(this.aHand.toString());
     }
-
+    private void displayScore (int score) {
+        aScoreLabel.setText(Integer.toString(score));
+    }
 }
