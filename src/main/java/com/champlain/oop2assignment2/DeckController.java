@@ -64,6 +64,10 @@ public class DeckController {
         score = simpleCount.calculateScore(pHand);
         displayScore(score);
     }
+    @FXML
+    protected void onAceButtonClick() {
+        
+    }
 
     @FXML
     protected void onDrawButtonClick() {

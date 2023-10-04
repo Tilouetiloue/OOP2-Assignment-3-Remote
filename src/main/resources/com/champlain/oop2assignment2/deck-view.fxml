@@ -42,6 +42,7 @@
        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
      </columnConstraints>
      <rowConstraints>
        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -51,6 +52,7 @@
          <Button onAction="#onSortButtonClick" prefHeight="25.0" prefWidth="120.0" text="Sort Cards by Rank" GridPane.columnIndex="1" />
           <Button onAction="#onSortBySuitButtonClick" prefHeight="25.0" prefWidth="120.0" text="Sort Cards by Suit" GridPane.columnIndex="2" />
          <Button onAction="#onScoreButtonClick" prefHeight="25.0" prefWidth="100.0" text="Score" GridPane.columnIndex="3" />
+          <Button onAction="#onAceScoreButtonClick" prefHeight="25.0" prefWidth="100.0" text="Ace Score" GridPane.columnIndex="4" />
       </children>
    </GridPane>
 </VBox>
