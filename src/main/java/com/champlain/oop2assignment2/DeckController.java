@@ -67,7 +67,7 @@ public class DeckController {
         displayScore(score);
     }
     @FXML
-    protected void onAceButtonClick() {
+    protected void onAceScoreButtonClick() {
         List<Card> pHand = new ArrayList<>();
         int score;
         for (Card card : aHand) {
