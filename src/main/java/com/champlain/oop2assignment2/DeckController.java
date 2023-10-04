@@ -4,7 +4,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 
+import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Iterator;
+import java.util.List;
 
 public class DeckController {
     @FXML
@@ -23,6 +26,8 @@ public class DeckController {
     private Comparator<Card> sortingStrategy = new FirstRankComparator();
 
     private Comparator<Card>  suitSortingStrategy = new SuitFirstComparator();
+
+    private SimpleCountStrategy simpleCount = new SimpleCountStrategy();
 
     public void initialize() {
         this.displayCardCollections();
@@ -51,7 +56,12 @@ public class DeckController {
 
     @FXML
     protected void onScoreButtonClick() {
-        aScoreLabel.setText("Not implemented.");
+        List<Card> pHand = new ArrayList<>();
+        int score;
+        for (Card card : aHand) {
+            pHand.add(card);
+        }
+        score = simpleCount.calculateScore(pHand);
     }
 
     @FXML
